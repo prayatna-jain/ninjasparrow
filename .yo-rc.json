@@ -42,9 +42,7 @@
     "jwtSecretKey": "MmRmNjkzNWU1NTBiODQxZmVkMDQyYWMxMzM1OTZjNWIzYzhmYjM1YWYxNzMzZWYyOGEwMzkzZTVmOWVkNTBlZjI4M2VjODZhODQ0MDNiODhiOTQ2Y2RjZWY4NjllODcwYmJkZDQ4YTY4ZDM0MzM3NzNjMmI4ZDlkMzZkMDlmNmY=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false,
-    "entities": ["Form", "FormElement", "ElementType", "FormSubmission", "FormSubmissionElement", "LookupField"],
-    "lastLiquibaseTimestamp": 1623589644000
+    "reactive": false
   },
   "git-provider": "GitHub",
   "git-company": "prayatna-jain",
