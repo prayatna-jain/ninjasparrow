@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="formElement">
+      <h2 data-cy="formElementDetailsHeading"><span>Form Element</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ formElement.id }}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+          <span>{{ formElement.name }}</span>
+        </dd>
+        <dt><span>Element Type Id</span></dt>
+        <dd>
+          <div *ngIf="formElement.elementTypeId">
+            <a [routerLink]="['/element-type', formElement.elementTypeId?.id, 'view']">{{ formElement.elementTypeId?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Lookup Field Id</span></dt>
+        <dd>
+          <div *ngIf="formElement.lookupFieldId">
+            <a [routerLink]="['/lookup-field', formElement.lookupFieldId?.id, 'view']">{{ formElement.lookupFieldId?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Form Id</span></dt>
+        <dd>
+          <div *ngIf="formElement.formId">
+            <a [routerLink]="['/form', formElement.formId?.id, 'view']">{{ formElement.formId?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/form-element', formElement.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
