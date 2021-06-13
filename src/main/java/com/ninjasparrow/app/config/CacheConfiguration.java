@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.ninjasparrow.app.domain.User.class.getName());
             createCache(cm, com.ninjasparrow.app.domain.Authority.class.getName());
             createCache(cm, com.ninjasparrow.app.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ninjasparrow.app.domain.Form.class.getName());
+            createCache(cm, com.ninjasparrow.app.domain.Form.class.getName() + ".formElements");
+            createCache(cm, com.ninjasparrow.app.domain.Form.class.getName() + ".formSubmissions");
+            createCache(cm, com.ninjasparrow.app.domain.Form.class.getName() + ".lookupFields");
+            createCache(cm, com.ninjasparrow.app.domain.FormElement.class.getName());
+            createCache(cm, com.ninjasparrow.app.domain.FormElement.class.getName() + ".formSubmissionElements");
+            createCache(cm, com.ninjasparrow.app.domain.ElementType.class.getName());
+            createCache(cm, com.ninjasparrow.app.domain.FormSubmission.class.getName());
+            createCache(cm, com.ninjasparrow.app.domain.FormSubmission.class.getName() + ".formSubmissionElements");
+            createCache(cm, com.ninjasparrow.app.domain.FormSubmissionElement.class.getName());
+            createCache(cm, com.ninjasparrow.app.domain.LookupField.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
