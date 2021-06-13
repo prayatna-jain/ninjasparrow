@@ -1,0 +1,63 @@
+{
+  "name": "FormElement",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "formId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "elementTypeId",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "lookupFieldId",
+      "fieldType": "UUID"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "elementType",
+      "otherEntityRelationshipName": "formElement",
+      "relationshipName": "elementTypeId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "lookupField",
+      "otherEntityRelationshipName": "formElement",
+      "relationshipName": "lookupFieldId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "formSubmissionElement",
+      "otherEntityRelationshipName": "elementId",
+      "relationshipName": "formSubmissionElement"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "form",
+      "otherEntityRelationshipName": "formElement",
+      "relationshipName": "formId"
+    }
+  ],
+  "entityTableName": "form_element",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210613130720"
+}

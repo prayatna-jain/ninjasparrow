@@ -1,0 +1,57 @@
+entity Form {
+	id UUID,
+    name String
+}
+
+entity FormElement {
+	id UUID,
+    name String,
+    formId UUID,
+    elementTypeId UUID,
+    lookupFieldId UUID
+}
+
+entity ElementType {
+	id UUID,
+    name String
+}
+
+entity FormSubmission {
+	id UUID,
+	formId UUID
+}
+
+entity FormSubmissionElement {
+	id UUID,
+    formSubmissionId UUID,
+    elementId UUID,
+    value String
+}
+
+entity LookupField {
+	id UUID,
+	formId UUID,
+    elementId UUID
+}
+
+relationship OneToMany {
+	Form to FormElement{formId},
+	Form to FormSubmission{formId},
+	Form to LookupField{formId}
+}
+
+relationship OneToMany {
+	FormElement to FormSubmissionElement{elementId}
+}
+
+relationship OneToOne {
+	FormElement{elementTypeId} to ElementType
+}
+
+relationship OneToOne {
+	FormElement{lookupFieldId} to LookupField
+}
+
+relationship OneToMany {
+	FormSubmission to FormSubmissionElement{formSubmissionId}
+}

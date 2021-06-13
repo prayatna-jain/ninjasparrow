@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="formSubmission">
+      <h2 data-cy="formSubmissionDetailsHeading"><span>Form Submission</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ formSubmission.id }}</span>
+        </dd>
+        <dt><span>Form Id</span></dt>
+        <dd>
+          <span>{{ formSubmission.formId }}</span>
+        </dd>
+        <dt><span>Form Id</span></dt>
+        <dd>
+          <div *ngIf="formSubmission.formId">
+            <a [routerLink]="['/form', formSubmission.formId?.id, 'view']">{{ formSubmission.formId?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/form-submission', formSubmission.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

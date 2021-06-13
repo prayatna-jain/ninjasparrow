@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity FormElement.
+    -->
+    <changeSet id="20210613130720-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="element_type_id_id"
+                                 baseTableName="form_element"
+                                 constraintName="fk_form_element__element_type_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="element_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="lookup_field_id_id"
+                                 baseTableName="form_element"
+                                 constraintName="fk_form_element__lookup_field_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="lookup_field"/>
+
+        <addForeignKeyConstraint baseColumnNames="form_id_id"
+                                 baseTableName="form_element"
+                                 constraintName="fk_form_element__form_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="form"/>
+    </changeSet>
+</databaseChangeLog>
