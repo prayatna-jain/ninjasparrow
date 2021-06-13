@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="formSubmissionElement">
+      <h2 data-cy="formSubmissionElementDetailsHeading"><span>Form Submission Element</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ formSubmissionElement.id }}</span>
+        </dd>
+        <dt><span>Form Submission Id</span></dt>
+        <dd>
+          <span>{{ formSubmissionElement.formSubmissionId }}</span>
+        </dd>
+        <dt><span>Element Id</span></dt>
+        <dd>
+          <span>{{ formSubmissionElement.elementId }}</span>
+        </dd>
+        <dt><span>Value</span></dt>
+        <dd>
+          <span>{{ formSubmissionElement.value }}</span>
+        </dd>
+        <dt><span>Element Id</span></dt>
+        <dd>
+          <div *ngIf="formSubmissionElement.elementId">
+            <a [routerLink]="['/form-element', formSubmissionElement.elementId?.id, 'view']">{{ formSubmissionElement.elementId?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Form Submission Id</span></dt>
+        <dd>
+          <div *ngIf="formSubmissionElement.formSubmissionId">
+            <a [routerLink]="['/form-submission', formSubmissionElement.formSubmissionId?.id, 'view']">{{
+              formSubmissionElement.formSubmissionId?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/form-submission-element', formSubmissionElement.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

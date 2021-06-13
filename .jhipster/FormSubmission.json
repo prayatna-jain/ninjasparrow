@@ -1,0 +1,37 @@
+{
+  "name": "FormSubmission",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "formId",
+      "fieldType": "UUID"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "formSubmissionElement",
+      "otherEntityRelationshipName": "formSubmissionId",
+      "relationshipName": "formSubmissionElement"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "form",
+      "otherEntityRelationshipName": "formSubmission",
+      "relationshipName": "formId"
+    }
+  ],
+  "entityTableName": "form_submission",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210613130722"
+}
